@@ -1,0 +1,18 @@
+{% if greeting_list %}
+    <ul>
+    {% for greeting in greeting_list %}
+        <li>
+          {{ greeting.message }}
+          <span><a href="{% url 'greetings:update' greeting.id %}">edit</a></span>
+          <span><a href="{% url 'greetings:delete' greeting.id %}">delete</a></span>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No greetings are available.</p>
+{% endif %}
+<a href="{% url 'greetings:create' %}">Create a New Greeting</a>
+<br>
+<a href="{% url 'greetings:newpage' %}">Go to New Page</a>
+<br>
+<img src="https://learnenglishfunway.com/wp-content/uploads/2021/07/Chungus-Meaning-What-Does-Chungus-Mean.jpg?ezimgfmt=ng:webp/ngcb9">
